@@ -15,7 +15,7 @@ import * as actions from '../actions/actions';
 
 const RaisedButton = props => <Button raised {...props} />;
 
-const images = [Pong, SmashBros, RageCage];
+const images = [SmashBros, RageCage, Pong];
 
 // const games = [
 //   {
@@ -46,7 +46,7 @@ const mapStateToProps = store => ({
   newGame: store.game.newGame,
 });
 
-const fetchGames = dispatch => fetch('http://192.168.0.127:3000/api/games/1')
+const fetchGames = dispatch => fetch('http://192.168.0.48:3000/api/games/1')
     .then(res => res.json())
     .then(res => dispatch(actions.loadGames(res)))
     .catch(e => console.log('Error fetching games', e.stack));
